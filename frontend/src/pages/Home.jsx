@@ -4,8 +4,6 @@ import Services from '../sections/Services';
 import ProductPreview from '../sections/ProductPreview';
 import Features from '../sections/Features';
 import About from '../sections/About';
-import Stats from '../sections/Stats';
-import Testimonials from '../sections/Testimonials';
 import Contact from '../sections/Contact';
 
 const Home = () => {
@@ -16,8 +14,6 @@ const Home = () => {
       <ProductPreview />
       <Features />
       <About />
-      <Stats />
-      <Testimonials />
       <Contact />
     </div>
   );
