@@ -279,7 +279,7 @@ const Navbar = () => {
       >
         <div className="text-center text-brand-charcoal/90">
           <p className="font-semibold text-base">Yazh Marutha Enterprises</p>
-          <p className="text-sm">ymb.yazhmaruthaenterprises@gmail.com</p>
+          <p className="text-sm">sales@yazhmaruthaenterprises.com</p>
           <p className="text-sm">1245 Alliance Jasmine Springs Thayyur,</p>
           <p className="text-sm">OMR, Kelambakkam, Chennai - 603103</p>
           <p className="text-sm">+91 7418310769</p>

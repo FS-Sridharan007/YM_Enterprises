@@ -31,7 +31,7 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Contact Info</h4>
             <ul className="space-y-3 text-gray-300">
-              <li>ymb.yazhmaruthaenterprises@gmail.com</li>
+              <li>sales@yazhmaruthaenterprises.com</li>
               <li>1245 Alliance Jasmine Springs Thayyur,</li>
               <li>OMR, Kelambakkam, Chennai - 603103</li>
               <li>+91 7418310769</li>
