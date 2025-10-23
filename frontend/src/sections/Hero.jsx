@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Solar from "../assets/images/rooftop-solar.jpg";
-import light from "../assets/images/chandelier5.jpg";
+import light from "../assets/images/image11.webp";
 import Home from "../assets/images/home2.jpg";
 
 const slides = [
