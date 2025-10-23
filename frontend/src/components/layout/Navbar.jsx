@@ -136,7 +136,7 @@ const Navbar = () => {
         <div className="bg-brand-teal text-white/80 text-sm hidden md:block">
             <div className="container mx-auto px-6 py-2 flex justify-between items-center">
               <div className="flex items-center space-x-6">
-                <a href="mailto:ymb.yazhmaruthaenterprises@gmail.com" className="flex items-center hover:text-white transition-colors"><FiMail className="mr-2" /> ymb.yazhmaruthaenterprises@gmail.com</a>
+                <a href="mailto:sales@yazhmaruthaenterprises.com" className="flex items-center hover:text-white transition-colors"><FiMail className="mr-2" /> sales@yazhmaruthaenterprises.com</a>
                 <a href="tel:+917418310769" className="flex items-center hover:text-white transition-colors"><FiPhone className="mr-2" /> +91 7418310769</a>
               </div>
               <div className="flex items-center space-x-4">
