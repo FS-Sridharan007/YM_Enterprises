@@ -1,12 +1,12 @@
-import solarPanel1 from "../assets/products/Highsolar.jpg";
-import solarPanel2 from "../assets/products/Highsolar1.jpg";
-import solarPanel3 from "../assets/products/Highsolar2.jpg";
-import solarInventor from "../assets/products/solarinventor.jpg";
-import solarBatteries from "../assets/products/energystorage.jpg";
-import chargeControllers from "../assets/products/smartcontroller.jpg";
-import mountingSystems1 from "../assets/products/mounting1.jpg";
-import mountingSystems2 from "../assets/products/mounting2.jpg";
-import mountingSystems3 from "../assets/products/mounting3.jpg";
+// import solarPanel1 from "../assets/products/Highsolar.jpg";
+// import solarPanel2 from "../assets/products/Highsolar1.jpg";
+// import solarPanel3 from "../assets/products/Highsolar2.jpg";
+// import solarInventor from "../assets/products/solarinventor.jpg";
+// import solarBatteries from "../assets/products/energystorage.jpg";
+// import chargeControllers from "../assets/products/smartcontroller.jpg";
+// import mountingSystems1 from "../assets/products/mounting1.jpg";
+// import mountingSystems2 from "../assets/products/mounting2.jpg";
+// import mountingSystems3 from "../assets/products/mounting3.jpg";
 
 import decorativeLighting1 from "../assets/products/decorative1.jpg";
 import decorativeLighting2 from "../assets/products/decorative2.jpg";
@@ -98,16 +98,16 @@ import ceiling5 from "../assets/products/ceiling5.jpg";
 import ceiling6 from "../assets/products/ceiling6.jpg";
 import ceiling7 from "../assets/products/ceiling7.jpg";
 
-import DishWasher from "../assets/products/dishwasher.jpg";
-import Coffee from "../assets/products/coffee.jpg";
-import Cleaner from "../assets/products/cleaner.jpg";
-import Cafe from "../assets/products/Cafe.jpg";
-import Fryer from "../assets/products/Fryer.jpg";
-import Iron from "../assets/products/iron.jpg";
-import Kettle from "../assets/products/Kettle.jpg";
-import Mixer from "../assets/products/Mixer.jpg";
-import TeaKettle from "../assets/products/teakettle.jpg";
-import Toaster from "../assets/products/toaster.jpg";
+// import DishWasher from "../assets/products/dishwasher.jpg";
+// import Coffee from "../assets/products/coffee.jpg";
+// import Cleaner from "../assets/products/cleaner.jpg";
+// import Cafe from "../assets/products/Cafe.jpg";
+// import Fryer from "../assets/products/Fryer.jpg";
+// import Iron from "../assets/products/iron.jpg";
+// import Kettle from "../assets/products/Kettle.jpg";
+// import Mixer from "../assets/products/Mixer.jpg";
+// import TeaKettle from "../assets/products/teakettle.jpg";
+// import Toaster from "../assets/products/toaster.jpg";
 
 export const productCategories = [
   {
@@ -130,11 +130,11 @@ export const productCategories = [
         Conclusion:
         A compact, efficient, and sustainable solar solution.
         `,
-        images: [
-          { src: solarPanel1, name: "Solar Panels" },
-          { src: solarPanel2, name: "Solar Panels" },
-          { src: solarPanel3, name: "Solar Panels" },
-        ]
+        // images: [
+        //   { src: solarPanel1, name: "Solar Panels" },
+        //   { src: solarPanel2, name: "Solar Panels" },
+        //   { src: solarPanel3, name: "Solar Panels" },
+        // ]
 
       },
       {
@@ -153,9 +153,9 @@ export const productCategories = [
         Conclusion:
         A simple and dependable inverter solution.
         `,
-        images: [
-          { src: solarInventor, name: "Solar Inverter" },
-        ],
+        // images: [
+        //   { src: solarInventor, name: "Solar Inverter" },
+        // ],
       },
       {
         id: "solar-batteries",
@@ -173,9 +173,9 @@ export const productCategories = [
         Conclusion:
         A reliable storage solution for uninterrupted power.
         `,
-        images: [
-          { src: solarBatteries, name: "Solar Battery" },
-        ],
+        // images: [
+        //   { src: solarBatteries, name: "Solar Battery" },
+        // ],
       },
       {
         id: "charge-controllers",
@@ -194,9 +194,9 @@ export const productCategories = [
         A reliable and efficient solution for managing solar power safely.
         `
         ,
-        images: [
-          { src: chargeControllers, name: "Charge Controller" },
-        ],
+        // images: [
+        //   { src: chargeControllers, name: "Charge Controller" },
+        // ],
       },
       {
         id: "mounting-systems",
@@ -215,11 +215,11 @@ export const productCategories = [
         A practical and sturdy solution for safe solar installations.
         `
         ,
-        images: [
-        { src: mountingSystems1, name: "Mounting System" },
-        { src: mountingSystems2, name: "Mounting System" },
-        { src: mountingSystems3, name: "Mounting System" },
-      ],
+      //   images: [
+      //   { src: mountingSystems1, name: "Mounting System" },
+      //   { src: mountingSystems2, name: "Mounting System" },
+      //   { src: mountingSystems3, name: "Mounting System" },
+      // ],
       },
     ],
   },
@@ -407,18 +407,18 @@ export const productCategories = [
         title: "Smart Home Appliances",
         description:
           "Elevate your home with our curated collection of smart appliances, designed to bring efficiency, comfort, and style to everyday living. Each product is chosen for its superior quality, durability, and advanced technology — making your home smarter, safer, and more convenient.",
-        images: [
-          { src: DishWasher, name: "Dishwasher" },
-          { src: Coffee, name: "Coffee Maker" },
-          { src: Cleaner, name: "Vacuum Cleaner" },
-          { src: Cafe, name: "Café Brewer" },
-          { src: Fryer, name: "Air Fryer" },
-          { src: Iron, name: "Iron" },
-          { src: Kettle, name: "Electric Kettle" },
-          { src: Mixer, name: "Mixer Grinder" },
-          { src: TeaKettle, name: "Tea Kettle" },
-          { src: Toaster, name: "Toaster" },
-        ],
+        // images: [
+        //   { src: DishWasher, name: "Dishwasher" },
+        //   { src: Coffee, name: "Coffee Maker" },
+        //   { src: Cleaner, name: "Vacuum Cleaner" },
+        //   { src: Cafe, name: "Café Brewer" },
+        //   { src: Fryer, name: "Air Fryer" },
+        //   { src: Iron, name: "Iron" },
+        //   { src: Kettle, name: "Electric Kettle" },
+        //   { src: Mixer, name: "Mixer Grinder" },
+        //   { src: TeaKettle, name: "Tea Kettle" },
+        //   { src: Toaster, name: "Toaster" },
+        // ],
       },
     ],
   },
