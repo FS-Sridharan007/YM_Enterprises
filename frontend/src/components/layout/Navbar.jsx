@@ -310,7 +310,7 @@ const Navbar = () => {
             <FiMail className="mr-1" size={16} /> Email
           </a>
           <a
-            href="tel:+917339680312"
+            href="tel:+91 7418310769"
             className="flex items-center hover:text-brand-teal transition-colors"
           >
             <FiPhone className="mr-1" size={16} /> Call
