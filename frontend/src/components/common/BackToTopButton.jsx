@@ -23,7 +23,7 @@ const BackToTopButton = () => {
       {isVisible && (
         <motion.button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-brand-teal text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center z-50"
+          className="fixed bottom-24 md:bottom-8 right-6 md:right-8 bg-brand-teal text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center z-50"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}

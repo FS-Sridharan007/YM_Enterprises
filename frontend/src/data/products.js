@@ -2,7 +2,9 @@
 // import solarPanel2 from "../assets/products/Highsolar1.jpg";
 // import solarPanel3 from "../assets/products/Highsolar2.jpg";
 // import solarInventor from "../assets/products/solarinventor.jpg";
-// import solarBatteries from "../assets/products/energystorage.jpg";
+import solarBatteries1 from "../assets/products/Solar B1.webp";
+import solarBatteries2 from "../assets/products/Solar B2.webp";
+import solarBatteries3 from "../assets/products/Solar B3.webp";
 // import chargeControllers from "../assets/products/smartcontroller.jpg";
 // import mountingSystems1 from "../assets/products/mounting1.jpg";
 // import mountingSystems2 from "../assets/products/mounting2.jpg";
@@ -173,9 +175,14 @@ export const productCategories = [
         Conclusion:
         A reliable storage solution for uninterrupted power.
         `,
-        // images: [
-        //   { src: solarBatteries, name: "Solar Battery" },
-        // ],
+        price: 23769,               // ⬅ ADD THIS
+        originalPrice: 28990,       // ⬅ ADD THIS
+        stock: 15,                  // optional but recommended
+        images: [
+          { src: solarBatteries1, name: "Solar Battery" },
+          { src: solarBatteries2, name: "Solar Battery" },
+          { src: solarBatteries3, name: "Solar Battery" },
+        ],
       },
       {
         id: "charge-controllers",
