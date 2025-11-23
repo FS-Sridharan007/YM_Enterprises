@@ -2,9 +2,8 @@
 // import solarPanel2 from "../assets/products/Highsolar1.jpg";
 // import solarPanel3 from "../assets/products/Highsolar2.jpg";
 // import solarInventor from "../assets/products/solarinventor.jpg";
-import solarBatteries1 from "../assets/products/Solar B1.webp";
-import solarBatteries2 from "../assets/products/Solar B2.webp";
-import solarBatteries3 from "../assets/products/Solar B3.webp";
+import solarBatteries1 from "../assets/products/Battery/Battery1.png";
+import solarBatteries2 from "../assets/products/Battery/Battery2.png";
 // import chargeControllers from "../assets/products/smartcontroller.jpg";
 // import mountingSystems1 from "../assets/products/mounting1.jpg";
 // import mountingSystems2 from "../assets/products/mounting2.jpg";
@@ -162,6 +161,7 @@ export const productCategories = [
       {
         id: "solar-batteries",
         title: "Energy Storage Batteries",
+        name: "Enzolt Energy(Lifepo4)",
         shortDescription:"Store excess solar energy for use at night or during outages with our reliable and long-lasting battery solutions.",
         fullDescription: `
         Product Overview:
@@ -179,10 +179,33 @@ export const productCategories = [
         originalPrice: 28990,       // ⬅ ADD THIS
         stock: 15,                  // optional but recommended
         images: [
-          { src: solarBatteries1, name: "Solar Battery" },
-          { src: solarBatteries2, name: "Solar Battery" },
-          { src: solarBatteries3, name: "Solar Battery" },
+          { src: solarBatteries1, name: "Enzolt Energy(Lifepo4)" },
+          { src: solarBatteries2, name: "Enzolt Energy(Lifepo4)" },
         ],
+        variants: [
+          {
+            id: "12W",
+            label: "12W Model",
+            price: 18990,               // sample price – update later
+            originalPrice: 21990,
+            stock: 25,
+            images: [
+              { src: solarBatteries1, name: "12W Front" },
+              { src: solarBatteries1, name: "12W Side" },
+            ],
+          },
+          {
+            id: "24W",
+            label: "24W Model",
+            price: 23769,               // your existing price
+            originalPrice: 28990,
+            stock: 15,
+            images: [
+              { src: solarBatteries1, name: "24W Front" },
+              { src: solarBatteries2, name: "24W Side" },
+            ],
+          }
+        ]
       },
       {
         id: "charge-controllers",

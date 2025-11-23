@@ -108,6 +108,7 @@ const ProductDetailPage = () => {
     ))}
   </div>
 )}
+
         {/* Popup modal for image + short long-description */}
         <AnimatePresence>
           {selectedImage && (

@@ -15,6 +15,8 @@ import Services from './sections/Services';
 import ServiceDetailPage from './pages/ServiceDetailPage';
 import BuyNowPage from './pages/BuyNowPage';
 import PaymentPage from './pages/PaymentPage';
+import EnzoltProductsPage from './pages/EnzoltProductsPage';
+import EnzoltProductDetailPage from './pages/EnzoltProductDetailPage';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,8 +36,11 @@ function App() {
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/products/:categoryId" element={<ProductsPage />} />
             <Route path="/products/:categoryId/:productId" element={<ProductDetailPage />} />
+            <Route path="/enzolt-products" element={<EnzoltProductsPage />} />
+            <Route path="/enzolt-products/:categoryId" element={<EnzoltProductsPage />} />
+            <Route path="/enzolt-products/:categoryId/:productId" element={<EnzoltProductDetailPage />} />
             <Route path="/buy-now/:categoryId/:productId" element={<BuyNowPage />} />
-            <Route path="/payment/:categoryId/:productId" element={<PaymentPage />} />
+            <Route path="/payment/:categoryId/:productId/:variantId" element={<PaymentPage />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:key" element={<ServiceDetailPage />} />
           </Routes>
