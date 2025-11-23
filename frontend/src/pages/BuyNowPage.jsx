@@ -191,7 +191,9 @@ const BuyNowPage = () => {
               <button className="flex-1 p-4 border-2 border-brand-teal text-brand-teal font-bold rounded-xl">
                 Add to Cart
               </button>      
-              <button className="flex-1 p-4 bg-brand-teal text-white font-bold rounded-xl">
+              <button
+                onClick={() => navigate(`/payment/${categoryId}/${productId}`)}
+                className="flex-1 p-4 bg-brand-teal text-white font-bold rounded-xl">
                 Buy Now
               </button>
             </div>
