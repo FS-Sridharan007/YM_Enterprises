@@ -23,6 +23,7 @@ const navLinks = [
         ]
       },
       { href: "/enzolt-products", label: "Enzolt Energy" },
+      { href: "/feston-products", label: "Feston" },
       { href: "/products/lighting-systems/decorative-lighting", label: "Decorative Lighting" },
       { href: "/products/lighting-systems/smart-lighting", label: "Smart Lighting" },
       { href: "/products/home-living/home-appliances", label: "Home Appliances" },

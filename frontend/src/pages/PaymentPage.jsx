@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { productCategories } from "../data/products";
 import { enzoltCategories } from "../data/enzoltProduct";
+import { festonCategories } from "../data/festonProduct";
 import { FiArrowLeft } from "react-icons/fi";
 import { motion } from "framer-motion";
 
@@ -21,7 +22,13 @@ const PaymentPage = () => {
 
     // 2️⃣ Enzolt products
     const enzoltCat = enzoltCategories.find((c) => c.id === categoryId);
-    return enzoltCat?.items?.find((p) => p.id === productId) || null;
+    if (enzoltCat) {
+      return enzoltCat?.items?.find((p) => p.id === productId) || null;
+    }
+
+    // 3️⃣ Feston products
+    const festonCat = festonCategories.find((c) => c.id === categoryId);
+    return festonCat?.items?.find((p) => p.id === productId) || null;
   };
 
   const product = loadProduct();

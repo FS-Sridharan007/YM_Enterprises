@@ -17,6 +17,8 @@ import BuyNowPage from './pages/BuyNowPage';
 import PaymentPage from './pages/PaymentPage';
 import EnzoltProductsPage from './pages/EnzoltProductsPage';
 import EnzoltProductDetailPage from './pages/EnzoltProductDetailPage';
+import FestonProductsPage from './pages/FestonProductsPage';
+import FestonProductDetailPage from './pages/FestonProductDetailPage';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,6 +41,9 @@ function App() {
             <Route path="/enzolt-products" element={<EnzoltProductsPage />} />
             <Route path="/enzolt-products/:categoryId" element={<EnzoltProductsPage />} />
             <Route path="/enzolt-products/:categoryId/:productId" element={<EnzoltProductDetailPage />} />
+            <Route path="/feston-products" element={<FestonProductsPage />} />
+            <Route path="/feston-products/:categoryId" element={<FestonProductsPage />} />
+            <Route path="/feston-products/:categoryId/:productId" element={<FestonProductDetailPage />} />
             <Route path="/buy-now/:categoryId/:productId" element={<BuyNowPage />} />
             <Route path="/payment/:categoryId/:productId/:variantId" element={<PaymentPage />} />
             <Route path="/services" element={<Services />} />

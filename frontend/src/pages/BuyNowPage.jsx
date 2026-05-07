@@ -2,6 +2,7 @@ import React, { useState, useLayoutEffect, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { productCategories } from "../data/products";
 import { enzoltCategories } from "../data/enzoltProduct";
+import { festonCategories } from "../data/festonProduct";
 import { FiArrowLeft, FiMinus, FiPlus } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { AiFillStar } from "react-icons/ai";
@@ -20,6 +21,14 @@ const BuyNowPage = () => {
         (c) => c.id === "enzolt-products"
       );
       return enzoltCat?.items?.find((p) => p.id === productId);
+    }
+
+    // Feston product
+    if (categoryId === "feston-products") {
+      const festonCat = festonCategories.find(
+        (c) => c.id === "feston-products"
+      );
+      return festonCat?.items?.find((p) => p.id === productId);
     }
 
     // Normal categories
@@ -127,6 +136,8 @@ const BuyNowPage = () => {
           to={
             categoryId === "enzolt-products"
               ? "/enzolt-products"
+              : categoryId === "feston-products"
+              ? "/feston-products"
               : `/products/${categoryId}`
           }
           className="flex items-center text-brand-teal hover:text-brand-gold mb-6"
