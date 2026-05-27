@@ -95,10 +95,10 @@ const EnzoltProductDetailPage = () => {
 
             {/* Buy Now Button */}
             <Link
-                  to={`/buy-now/enzolt-products/${productId}`}
+                  // to={`/buy-now/enzolt-products/${productId}`}
                   className="inline-block bg-brand-gold text-brand-charcoal font-bold px-8 py-4 rounded-xl shadow-md hover:bg-yellow-400 transition"
                 >
-                  Buy Now
+                  Enquiry Now
             </Link>
           </div>
         </div>

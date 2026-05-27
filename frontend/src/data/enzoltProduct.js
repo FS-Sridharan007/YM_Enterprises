@@ -9,7 +9,7 @@ export const enzoltCategories = [
       {
         id: "enzolt-Lifepo4",
         title: "Enzolt Energy (LiFePO4)",
-        description: "High-performance LiFePO4 backup battery for home & solar.",
+        description: "Enzolt batteries are powered by advanced LiFePO₄ (Lithium Iron Phosphate) technology, a next-generation energy storage solution known for its exceptional safety, stability, and durability.",
 
         // DEFAULT product values (used only if variants missing)
         price: 23769,

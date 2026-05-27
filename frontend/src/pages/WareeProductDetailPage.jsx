@@ -2,13 +2,13 @@ import React, { useState, useLayoutEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowLeft, FiX } from "react-icons/fi";
-import { festonCategories } from "../data/festonProduct";
+import { wareeCategories } from "../data/wareeProduct";
 
-const FestonProductDetailPage = () => {
+const WareeProductDetailPage = () => {
   const { categoryId, productId } = useParams();
   const navigate = useNavigate();
 
-  const category = festonCategories.find((c) => c.id === categoryId);
+  const category = wareeCategories.find((c) => c.id === categoryId);
   const product = category?.items.find((item) => item.id === productId);
 
   const [selectedImage, setSelectedImage] = useState(null);
@@ -22,10 +22,10 @@ const FestonProductDetailPage = () => {
       <div className="container mx-auto px-6 py-32 text-center">
         <h1 className="text-3xl font-bold">Product Not Found</h1>
         <Link
-          to="/feston-products"
+          to="/waree-products"
           className="mt-8 inline-block bg-brand-gold text-brand-teal font-bold py-3 px-6 rounded-md hover:opacity-90"
         >
-          Back to Feston Products
+          Back to Waaree Products
         </Link>
       </div>
     );
@@ -72,6 +72,16 @@ const FestonProductDetailPage = () => {
 
           {/* RIGHT — Product Info */}
           <div>
+            {/* Subtitle + Tagline */}
+            {product.subtitle && (
+              <p className="text-sm text-brand-gold font-semibold uppercase tracking-wider mb-1">
+                {product.subtitle}
+              </p>
+            )}
+            {product.tagline && (
+              <p className="text-gray-500 text-sm mb-4">{product.tagline}</p>
+            )}
+
             <h2 className="text-2xl font-semibold text-brand-teal mb-4">
               Product Overview
             </h2>
@@ -80,22 +90,26 @@ const FestonProductDetailPage = () => {
               {product.description}
             </p>
 
+            {/* Specifications */}
             {product.specs && (
               <div className="mt-8">
                 <h3 className="text-xl font-semibold mb-3 text-brand-charcoal">
-                  Specifications
+                  What's Included
                 </h3>
-                <ul className="list-disc ml-6 text-gray-700 space-y-1">
+                <ul className="space-y-2">
                   {product.specs.map((spec, idx) => (
-                    <li key={idx}>{spec}</li>
+                    <li key={idx} className="flex items-start gap-2 text-gray-700">
+                      <span className="text-brand-teal mt-1">▸</span>
+                      <span>{spec}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
             )}
 
-            {/* Buy Now Button */}
+            {/* Enquiry Now Button */}
             <Link
-              // to={`/buy-now/feston-products/${productId}`}
+              // to="/#contact"
               className="inline-block bg-brand-gold text-brand-charcoal font-bold px-8 py-4 rounded-xl shadow-md hover:bg-yellow-400 transition mt-8"
             >
               Enquiry Now
@@ -142,4 +156,4 @@ const FestonProductDetailPage = () => {
   );
 };
 
-export default FestonProductDetailPage;
+export default WareeProductDetailPage;

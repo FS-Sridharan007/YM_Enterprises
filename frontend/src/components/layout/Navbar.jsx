@@ -11,24 +11,7 @@ import {
 const navLinks = [
   { href: "/#home", label: "Home" },
   { href: "/#services", label: "Services" },
-  {
-    label: "Products",
-    subLinks: [
-      {
-        label: "Solars",
-        subLinks: [
-          { href: "/products/solar-solutions/solar-panels", label: "Panels" },
-          { href: "/products/solar-solutions/solar-inverters", label: "Inventors" },
-          { href: "/products/solar-solutions/solar-batteries", label: "Batteries" },
-        ]
-      },
-      { href: "/enzolt-products", label: "Enzolt Energy" },
-      { href: "/feston-products", label: "Feston" },
-      { href: "/products/lighting-systems/decorative-lighting", label: "Decorative Lighting" },
-      { href: "/products/lighting-systems/smart-lighting", label: "Smart Lighting" },
-      { href: "/products/home-living/home-appliances", label: "Home Appliances" },
-    ]
-  },
+  { href: "/all-products", label: "Products" },
   { href: "/#features", label: "Features" },
   { href: "/#about", label: "About Us" },
   { href: "/#contact", label: "Contact" },

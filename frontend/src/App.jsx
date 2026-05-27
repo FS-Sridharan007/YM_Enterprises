@@ -19,6 +19,12 @@ import EnzoltProductsPage from './pages/EnzoltProductsPage';
 import EnzoltProductDetailPage from './pages/EnzoltProductDetailPage';
 import FestonProductsPage from './pages/FestonProductsPage';
 import FestonProductDetailPage from './pages/FestonProductDetailPage';
+import CombosPage from './pages/CombosPage';
+import AllProductsPage from './pages/AllProductsPage';
+import DeyeProductsPage from './pages/DeyeProductsPage';
+import DeyeProductDetailPage from './pages/DeyeProductDetailPage';
+import WareeProductsPage from './pages/WareeProductsPage';
+import WareeProductDetailPage from './pages/WareeProductDetailPage';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,6 +41,7 @@ function App() {
         <main className="w-full">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/all-products" element={<AllProductsPage />} />
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/products/:categoryId" element={<ProductsPage />} />
             <Route path="/products/:categoryId/:productId" element={<ProductDetailPage />} />
@@ -44,6 +51,13 @@ function App() {
             <Route path="/feston-products" element={<FestonProductsPage />} />
             <Route path="/feston-products/:categoryId" element={<FestonProductsPage />} />
             <Route path="/feston-products/:categoryId/:productId" element={<FestonProductDetailPage />} />
+            <Route path="/combos" element={<CombosPage />} />
+            <Route path="/deye-products" element={<DeyeProductsPage />} />
+            <Route path="/deye-products/:categoryId" element={<DeyeProductsPage />} />
+            <Route path="/deye-products/:categoryId/:productId" element={<DeyeProductDetailPage />} />
+            <Route path="/waree-products" element={<WareeProductsPage />} />
+            <Route path="/waree-products/:categoryId" element={<WareeProductsPage />} />
+            <Route path="/waree-products/:categoryId/:productId" element={<WareeProductDetailPage />} />
             <Route path="/buy-now/:categoryId/:productId" element={<BuyNowPage />} />
             <Route path="/payment/:categoryId/:productId/:variantId" element={<PaymentPage />} />
             <Route path="/services" element={<Services />} />

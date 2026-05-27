@@ -1,0 +1,126 @@
+import React, { useLayoutEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useParams, NavLink, Link } from "react-router-dom";
+import { deyeCategories } from "../data/deyeProduct";
+
+const DeyeProductsPage = () => {
+  const { categoryId } = useParams();
+
+  const activeCategory = categoryId
+    ? deyeCategories.find((c) => c.id === categoryId)
+    : deyeCategories[0];
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [categoryId]);
+
+  if (!activeCategory) {
+    return (
+      <div className="py-24 text-center">
+        <h2 className="text-2xl font-bold">Category not found</h2>
+      </div>
+    );
+  }
+
+  return (
+    <section id="products" className="pt-32 pb-24 bg-white scroll-mt-28">
+      <div className="container mx-auto px-6">
+
+        {/* Page Heading */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="font-serif text-4xl font-bold text-brand-teal">
+            DEYE Products
+          </h2>
+          <p className="text-gray-500 mt-2">
+            Explore premium DEYE solar inverter solutions.
+          </p>
+        </motion.div>
+
+        {/* Category Tabs */}
+        <div className="flex justify-center border-b border-gray-200 mb-12 relative">
+          {deyeCategories.map((cat) => (
+            <NavLink
+              key={cat.id}
+              to={`/deye-products/${cat.id}`}
+              className={({ isActive }) =>
+                `relative font-medium text-lg px-6 py-3 transition-colors ${
+                  isActive
+                    ? "text-brand-teal"
+                    : "text-gray-500 hover:text-brand-teal"
+                }`
+              }
+            >
+              {cat.category}
+              {cat.id === activeCategory.id && (
+                <motion.div
+                  layoutId="deyeProductTabUnderline"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-gold"
+                />
+              )}
+            </NavLink>
+          ))}
+        </div>
+
+        {/* Products Grid */}
+        <div className="max-w-5xl mx-auto">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCategory.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {activeCategory.items.map((item) => (
+                <Link
+                  key={item.id}
+                  to={`/deye-products/${activeCategory.id}/${item.id}`}
+                  className="block p-6 rounded-lg border border-gray-200/80 transition-all duration-300 hover:shadow-lg hover:border-gray-300"
+                >
+                  {/* Image */}
+                  <div className="w-full h-52 bg-gray-100 rounded-md flex items-center justify-center mb-4 overflow-hidden">
+                    <img
+                      src={item.images?.[0]?.src}
+                      alt={item.title}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+
+                  {/* Title */}
+                  <h4 className="font-serif text-xl font-bold text-brand-teal">
+                    {item.title}
+                  </h4>
+
+                  {/* Subtitle */}
+                  {item.subtitle && (
+                    <p className="text-gray-500 mt-2 text-sm">{item.subtitle}</p>
+                  )}
+
+                  {/* Tagline */}
+                  {item.tagline && (
+                    <p className="text-brand-charcoal font-semibold text-sm mt-1">
+                      {item.tagline}
+                    </p>
+                  )}
+
+                  {/* View Details */}
+                  <span className="mt-4 inline-block text-brand-teal font-medium hover:text-brand-gold">
+                    View Details →
+                  </span>
+                </Link>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default DeyeProductsPage;
