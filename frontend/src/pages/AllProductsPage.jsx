@@ -14,7 +14,7 @@ import {
 
 /* ─── representative images (first image from each category) ─── */
 import solarBattery from "../assets/images/solarpanel.jpg";
-import enzoltEnergy from "../assets/products/Battery/battery1.png";
+import enzoltEnergy from "../assets/products/Battery/Battery1.png";
 import feston3Kw from "../assets/products/Feston/Feston 3Kw.png";
 import deyeProduct from "../assets/products/Deye/Deye.png";
 import wareeImg from "../assets/products/Waree/Waree.webp";
