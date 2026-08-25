@@ -1,10 +1,17 @@
 import nodemailer from "nodemailer";
 
 const getTransporter = () => {
+  if (!process.env.ZOHO_USER || !process.env.ZOHO_APP_PASSWORD) {
+    throw new Error(`Missing Zoho Credentials in Netlify Environment Variables. ZOHO_USER is ${process.env.ZOHO_USER ? 'Set' : 'Missing'}, ZOHO_APP_PASSWORD is ${process.env.ZOHO_APP_PASSWORD ? 'Set' : 'Missing'}`);
+  }
+
   return nodemailer.createTransport({
     host: "smtp.zoho.in",
-    port: 587,
-    secure: false, // true for 465, false for other ports
+    port: 465,
+    secure: true,
+    connectionTimeout: 5000, // Fail quickly instead of crashing Netlify
+    greetingTimeout: 5000,
+    socketTimeout: 5000,
     auth: {
       user: process.env.ZOHO_USER,
       pass: process.env.ZOHO_APP_PASSWORD,
