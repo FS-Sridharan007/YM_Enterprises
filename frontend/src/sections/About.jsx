@@ -1,12 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import FounderImage from '../assets/Logo.jpg';
+import companyLogo from '../assets/Logo2.png';
 
 const About = () => {
   return (
     <section id="about" className="py-24 scroll-mt-28">
       <div className="container mx-auto px-6">
-        <motion.div 
+        <motion.div
           className="bg-white rounded-lg shadow-xl p-8 md:p-12 grid md:grid-cols-3 gap-8 items-center"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -41,11 +42,11 @@ const About = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            <div className="w-20 h-20 rounded-full mx-auto mb-4 bg-brand-teal/10 flex items-center justify-center shadow-md">
-              <span className="text-3xl font-bold text-brand-teal font-serif">TB</span>
+            <div className="w-20 h-20 rounded-full mx-auto mb-4 bg-white flex items-center justify-center shadow-md border border-gray-100 overflow-hidden">
+              <img src={companyLogo} alt="Yazh Marutha Logo" className="w-full h-full object-contain p-1" />
             </div>
             <h3 className="font-serif text-2xl font-bold text-brand-teal">T Bhuvaneshwaran</h3>
-            <p className="text-brand-gold font-semibold mt-1">Sales Director</p>
+            <p className="text-brand-gold font-semibold mt-1">Sales Manager</p>
           </motion.div>
 
           {/* G Pushpaganesh - Technical Director */}
@@ -56,11 +57,11 @@ const About = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="w-20 h-20 rounded-full mx-auto mb-4 bg-brand-teal/10 flex items-center justify-center shadow-md">
-              <span className="text-3xl font-bold text-brand-teal font-serif">GP</span>
+            <div className="w-20 h-20 rounded-full mx-auto mb-4 bg-white flex items-center justify-center shadow-md border border-gray-100 overflow-hidden">
+              <img src={companyLogo} alt="Yazh Marutha Logo" className="w-full h-full object-contain p-1" />
             </div>
             <h3 className="font-serif text-2xl font-bold text-brand-teal">G Pushpaganesh</h3>
-            <p className="text-brand-gold font-semibold mt-1">Technical Director</p>
+            <p className="text-brand-gold font-semibold mt-1">Technical Consultant</p>
           </motion.div>
         </div>
       </div>

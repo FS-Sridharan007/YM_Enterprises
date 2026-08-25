@@ -3,6 +3,7 @@ import ServiceCard from "../components/common/ServiceCard";
 import { servicesData } from "../data/servicesData";
 import { FiSun, FiZap, FiCpu } from 'react-icons/fi';
 import { motion } from "framer-motion";
+import companyLogo from '../assets/Logo2.png';
 
 const iconMap = {
   solar: <FiSun size={32} />,
@@ -14,12 +15,29 @@ const iconMap = {
 const RightArt = () => (
   <svg viewBox="0 0 320 380" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
 
+    <defs>
+      {/* Circular clip for logo */}
+      <clipPath id="svcLogoClip">
+        <circle cx="200" cy="130" r="24"/>
+      </clipPath>
+    </defs>
+
     {/* Glowing sun orb */}
     <circle cx="200" cy="130" r="52" fill="#1a535c" opacity="0.08"/>
     <circle cx="200" cy="130" r="38" fill="#1a535c" opacity="0.13"/>
     <circle cx="200" cy="130" r="26" fill="#1a535c" opacity="0.55"/>
-    <circle cx="200" cy="130" r="18" fill="#c4a265" opacity="0.75"/>
-    <circle cx="200" cy="130" r="10" fill="#e0bc85" opacity="0.9"/>
+
+    {/* White backing circle for logo */}
+    <circle cx="200" cy="130" r="24" fill="white" opacity="0.95"/>
+
+    {/* Company logo inside the sun orb */}
+    <image
+      href={companyLogo}
+      x="176" y="106"
+      width="48" height="48"
+      clipPath="url(#svcLogoClip)"
+      preserveAspectRatio="xMidYMid meet"
+    />
 
     {/* Sun rays */}
     {[0, 40, 80, 120, 160, 200, 240, 280, 320].map((angle, i) => {
