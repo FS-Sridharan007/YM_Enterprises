@@ -48,6 +48,7 @@ const EnquiryModal = ({ isOpen, onClose, product }) => {
         body: JSON.stringify({
           ...formData,
           productName: product?.title || product?.name || "Product Enquiry",
+          productUrl: window.location.href,
         }),
       });
 

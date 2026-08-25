@@ -22,10 +22,15 @@ transporter.verify((error) => {
 
 /**
  * Send an enquiry email to the business owner
- * @param {Object} data - { name, phone, email, city, message, productName }
+ * @param {Object} data - { name, phone, email, city, message, productName, productUrl }
  */
 const sendEnquiryEmail = async (data) => {
-  const { name, phone, email, city, message, productName } = data;
+  const { name, phone, email, city, message, productName, productUrl } = data;
+
+  // Make product name clickable if URL is provided
+  const productDisplay = productUrl 
+    ? `<a href="${productUrl}" style="color: #1a535c; text-decoration: none; border-bottom: 1px dashed #1a535c;">${productName || "General Enquiry"}</a>`
+    : (productName || "General Enquiry");
 
   const mailOptions = {
     from: `"YM Enterprises Website" <${process.env.ZOHO_USER}>`,
@@ -44,7 +49,7 @@ const sendEnquiryEmail = async (data) => {
         <!-- Product Info -->
         <div style="background: #ffffff; padding: 24px 32px; border-bottom: 2px solid #f0f0f0;">
           <p style="margin: 0; font-size: 12px; color: #c4a265; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Enquired Product</p>
-          <h3 style="margin: 6px 0 0; color: #1a535c; font-size: 18px;">${productName || "General Enquiry"}</h3>
+          <h3 style="margin: 6px 0 0; color: #1a535c; font-size: 18px;">${productDisplay}</h3>
         </div>
 
         <!-- Customer Details -->

@@ -61,6 +61,7 @@ app.post(
     body("city").optional().trim().isLength({ max: 100 }),
     body("message").optional().trim().isLength({ max: 1000 }),
     body("productName").optional().trim().isLength({ max: 200 }),
+    body("productUrl").optional().trim().isURL({ require_tld: false }),
   ],
   async (req, res) => {
     // Validate inputs
@@ -69,10 +70,10 @@ app.post(
       return res.status(400).json({ success: false, errors: errors.array() });
     }
 
-    const { name, phone, email, city, message, productName } = req.body;
+    const { name, phone, email, city, message, productName, productUrl } = req.body;
 
     try {
-      await sendEnquiryEmail({ name, phone, email, city, message, productName });
+      await sendEnquiryEmail({ name, phone, email, city, message, productName, productUrl });
 
       console.log(`✅ Enquiry email sent for "${productName}" from ${name} (${phone})`);
 
