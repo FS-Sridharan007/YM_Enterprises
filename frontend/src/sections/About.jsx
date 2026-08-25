@@ -16,7 +16,7 @@ const About = () => {
           <div className="md:col-span-1 text-center">
             <img src={FounderImage} alt="Founder Priyadharshini Bhuvaneshwaran" className="w-48 h-48 rounded-full mx-auto mb-4 object-cover shadow-md" />
             <h3 className="font-serif text-2xl font-bold text-brand-teal">Priya Dharshini Bhuvaneshwaran</h3>
-            <p className="text-brand-gold font-semibold">Founder and CEO</p>
+            <p className="text-brand-gold font-semibold">Founder and Managing Director</p>
           </div>
           <div className="md:col-span-2 md:pl-8 border-t md:border-t-0 md:border-l border-gray-200/80 pt-8 md:pt-0 md:pl-8">
             <h2 className="font-serif text-3xl font-bold text-brand-teal mb-4 leading-snug">
