@@ -216,7 +216,7 @@ export const productCategories = [
       },
       {
         id: "exide-inverter-battery-combo",
-        title: "Exide STAR12V900 900VA/12V Pure Sine Wave Inverter + INVA Master IMTT1500 150Ah 12V Tall Tubular Battery Combo",
+        title: "Exide Combo",
         name: "Exide Star 900VA + IMTT1500 150Ah Combo",
         subtitle: "42M Inverter & 60M Battery Warranty",
         shortDescription: "Exide STAR12V900 900VA/12V Pure Sine Wave Inverter + INVA Master IMTT1500 150Ah 12V Tall Tubular Battery Combo - 42M Inverter & 60M Battery Warranty",
