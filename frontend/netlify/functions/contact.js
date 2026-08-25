@@ -122,9 +122,16 @@ export const handler = async (event, context) => {
       };
     }
 
-    // Send emails
-    await sendContactEmail({ name, email, service, message });
-    await sendCustomerConfirmationEmail({ name, email, service });
+    // Send emails concurrently to cut the wait time in half
+    const emailTasks = [
+      sendContactEmail({ name, email, service, message })
+    ];
+
+    if (email) {
+      emailTasks.push(sendCustomerConfirmationEmail({ name, email, service }));
+    }
+
+    await Promise.all(emailTasks);
 
     return {
       statusCode: 200,
