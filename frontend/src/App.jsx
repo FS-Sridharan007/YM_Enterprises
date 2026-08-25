@@ -25,6 +25,7 @@ import DeyeProductsPage from './pages/DeyeProductsPage';
 import DeyeProductDetailPage from './pages/DeyeProductDetailPage';
 import WareeProductsPage from './pages/WareeProductsPage';
 import WareeProductDetailPage from './pages/WareeProductDetailPage';
+import GalleryPage from './pages/GalleryPage';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -58,6 +59,7 @@ function App() {
             <Route path="/waree-products" element={<WareeProductsPage />} />
             <Route path="/waree-products/:categoryId" element={<WareeProductsPage />} />
             <Route path="/waree-products/:categoryId/:productId" element={<WareeProductDetailPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/buy-now/:categoryId/:productId" element={<BuyNowPage />} />
             <Route path="/payment/:categoryId/:productId/:variantId" element={<PaymentPage />} />
             <Route path="/services" element={<Services />} />
