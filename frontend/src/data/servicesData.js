@@ -7,7 +7,7 @@ export const servicesData = {
     description: "End-to-end solar services including installation and maintenance.",
     details: "We provide customized solar solutions for residential and commercial projects, including consultation, design, installation, and ongoing maintenance.",
     features: [
-      "Solar panels installation for homes and businesses",
+      "Solar plant installation for Residential & Commercial",
       "Energy-efficient solar batteries",
       "Custom solar system design",
       "Maintenance & repair services",

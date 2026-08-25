@@ -18,6 +18,7 @@ import enzoltEnergy from "../assets/products/Battery/Battery1.png";
 import feston3Kw from "../assets/products/Feston/Feston 3Kw.png";
 import deyeProduct from "../assets/products/Deye/Deye.png";
 import wareeImg from "../assets/products/Waree/Waree.webp";
+import polycabImg from "../assets/products/Polycab/Polycab3kw.webp";
 import decorative from "../assets/products/decorative1.jpg";
 import smartLighting from "../assets/products/technical1.jpg";
 import homeAppliance from "../assets/products/spot1.jpg";
@@ -79,6 +80,17 @@ const allCategories = [
     icon: HiOutlineSun,
     color: "from-red-400 to-pink-500",
     items: ["3KW Solar Kit", "5KW Solar Kit"],
+  },
+  {
+    id: "polycab",
+    title: "Polycab",
+    description:
+      "High-performance Polycab solar on-grid inverters engineered for 3KW, 5KW, and 6KW capacity setups with dual MPPT and smart monitoring.",
+    image: polycabImg,
+    href: "/polycab-products",
+    icon: HiOutlineSun,
+    color: "from-amber-500 to-yellow-600",
+    items: ["3KW Inverter", "5KW Inverter", "6KW Inverter"],
   },
   {
     id: "combos",

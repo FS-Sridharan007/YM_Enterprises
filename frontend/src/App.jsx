@@ -25,6 +25,8 @@ import DeyeProductsPage from './pages/DeyeProductsPage';
 import DeyeProductDetailPage from './pages/DeyeProductDetailPage';
 import WareeProductsPage from './pages/WareeProductsPage';
 import WareeProductDetailPage from './pages/WareeProductDetailPage';
+import PolycabProductsPage from './pages/PolycabProductsPage';
+import PolycabProductDetailPage from './pages/PolycabProductDetailPage';
 import GalleryPage from './pages/GalleryPage';
 
 function App() {
@@ -59,6 +61,9 @@ function App() {
             <Route path="/waree-products" element={<WareeProductsPage />} />
             <Route path="/waree-products/:categoryId" element={<WareeProductsPage />} />
             <Route path="/waree-products/:categoryId/:productId" element={<WareeProductDetailPage />} />
+            <Route path="/polycab-products" element={<PolycabProductsPage />} />
+            <Route path="/polycab-products/:categoryId" element={<PolycabProductsPage />} />
+            <Route path="/polycab-products/:categoryId/:productId" element={<PolycabProductDetailPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/buy-now/:categoryId/:productId" element={<BuyNowPage />} />
             <Route path="/payment/:categoryId/:productId/:variantId" element={<PaymentPage />} />
