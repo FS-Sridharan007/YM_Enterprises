@@ -140,15 +140,6 @@ export const handler = async (event, context) => {
       };
     }
 
-    // DIAGNOSTIC TEST
-    if (name.toLowerCase() === "ping") {
-      return {
-        statusCode: 200,
-        headers: { "Access-Control-Allow-Origin": "*" },
-        body: JSON.stringify({ success: true, message: "PONG! The serverless function is alive and working perfectly." })
-      };
-    }
-
     // Send emails
     await sendEnquiryEmail({ name, phone, email, city, message, productName, productUrl });
     
