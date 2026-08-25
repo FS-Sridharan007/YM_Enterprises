@@ -20,12 +20,13 @@ app.use(helmet());
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",                        // local dev
+      "http://localhost:5173",
       "http://localhost:5174",
-      process.env.FRONTEND_URL,                       // production Netlify URL
+      "https://yazhmaruthaenterprises.com",
+      "https://www.yazhmaruthaenterprises.com",
+      process.env.FRONTEND_URL,
     ].filter(Boolean),
-    methods: ["POST"],
-    allowedHeaders: ["Content-Type"],
+    credentials: true,
   })
 );
 
