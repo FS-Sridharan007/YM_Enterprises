@@ -4,6 +4,13 @@
 // import solarInventor from "../assets/products/solarinventor.jpg";
 import solarBatteries1 from "../assets/products/Battery/Battery1.png";
 import solarBatteries2 from "../assets/products/Battery/Battery2.png";
+import exide1 from "../assets/products/Exide/Exide1.jpg";
+import exide2 from "../assets/products/Exide/Exide2.jpg";
+import exide3 from "../assets/products/Exide/Exide3.jpg";
+import exide4 from "../assets/products/Exide/Exide4.jpg";
+import exide5 from "../assets/products/Exide/Exide5.jpg";
+import exide6 from "../assets/products/Exide/Exide6.jpg";
+import exide7 from "../assets/products/Exide/Exide7.jpg";
 // import chargeControllers from "../assets/products/smartcontroller.jpg";
 // import mountingSystems1 from "../assets/products/mounting1.jpg";
 // import mountingSystems2 from "../assets/products/mounting2.jpg";
@@ -205,6 +212,46 @@ export const productCategories = [
               { src: solarBatteries2, name: "24W Side" },
             ],
           }
+        ]
+      },
+      {
+        id: "exide-inverter-battery-combo",
+        title: "Exide STAR12V900 900VA/12V Pure Sine Wave Inverter + INVA Master IMTT1500 150Ah 12V Tall Tubular Battery Combo",
+        name: "Exide Star 900VA + IMTT1500 150Ah Combo",
+        subtitle: "42M Inverter & 60M Battery Warranty",
+        shortDescription: "Exide STAR12V900 900VA/12V Pure Sine Wave Inverter + INVA Master IMTT1500 150Ah 12V Tall Tubular Battery Combo - 42M Inverter & 60M Battery Warranty",
+        fullDescription: `
+        Product Overview:
+        Exide STAR12V900 900VA/12V Pure Sine Wave Inverter + INVA Master IMTT1500 150Ah 12V Tall Tubular Battery Combo - 42M Inverter & 60M Battery Warranty.
+        
+        Key Features:
+        - Inverter: Exide STAR12V900 (900VA / 12V Pure Sine Wave)
+        - Battery: INVA Master IMTT1500 (150Ah 12V Tall Tubular)
+        - Warranty: 42 Months Inverter & 60 Months Battery Warranty
+        - Pure Sine Wave technology ensures noise-free operation and appliance safety.
+        - Heavy-duty tubular plates for prolonged battery power backup.
+        `,
+        price: 21094,
+        originalPrice: 29896,
+        stock: 12,
+        rating: 4.1,
+        reviewsCount: 23,
+        images: [
+          { src: exide1, name: "Exide Inverter & Battery Combo" },
+          { src: exide2, name: "Exide STAR12V900 Front View" },
+          { src: exide3, name: "INVA Master IMTT1500 Battery" },
+          { src: exide4, name: "IMTT1500 Side View" },
+          { src: exide5, name: "Exide Inverter Display Panel" },
+          { src: exide6, name: "Product Specifications & Terminals" },
+          { src: exide7, name: "Complete Package & Accessories" },
+        ],
+        specs: [
+          "Exide STAR12V900 900VA/12V Pure Sine Wave Inverter",
+          "INVA Master IMTT1500 150Ah 12V Tall Tubular Battery",
+          "42 Months Inverter Warranty",
+          "60 Months Battery Warranty",
+          "Pure Sine Wave Output - Safe for sensitive electronic devices",
+          "Tall Tubular design for longer backup and low maintenance"
         ]
       },
       {
