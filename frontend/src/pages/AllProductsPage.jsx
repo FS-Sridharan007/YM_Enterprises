@@ -21,7 +21,7 @@ import wareeImg from "../assets/products/Waree/Waree.webp";
 import polycabImg from "../assets/products/Polycab/Polycab3kw.webp";
 import decorative from "../assets/products/decorative1.jpg";
 import smartLighting from "../assets/products/technical1.jpg";
-import homeAppliance from "../assets/products/spot1.jpg";
+// import homeAppliance from "../assets/products/spot1.jpg";
 import comboImg from "../assets/products/Combo/combo1.png";
 
 /* ─── category data ─── */
@@ -125,17 +125,17 @@ const allCategories = [
     color: "from-cyan-400 to-blue-500",
     items: ["Technical Lighting", "Spot Lights", "Outdoor Lighting", "LED Strips"],
   },
-  {
-    id: "home-appliances",
-    title: "Home Appliances",
-    description:
-      "A curated collection of smart home appliances designed for efficiency, comfort, and modern convenience in everyday life.",
-    image: homeAppliance,
-    href: "/products/home-living/home-appliances",
-    icon: HiOutlineHome,
-    color: "from-slate-400 to-gray-600",
-    items: ["Smart Appliances"],
-  },
+  // {
+  //   id: "home-appliances",
+  //   title: "Home Appliances",
+  //   description:
+  //     "A curated collection of smart home appliances designed for efficiency, comfort, and modern convenience in everyday life.",
+  //   image: homeAppliance,
+  //   href: "/products/home-living/home-appliances",
+  //   icon: HiOutlineHome,
+  //   color: "from-slate-400 to-gray-600",
+  //   items: ["Smart Appliances"],
+  // },
 ];
 
 /* ─── animation variants ─── */

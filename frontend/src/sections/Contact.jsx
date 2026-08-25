@@ -23,7 +23,7 @@ const Contact = () => {
                     <option>Select a Service of Interest</option>
                     <option>Lighting Solutions</option>
                     <option>Solar Energy</option>
-                    <option>Home Appliances</option>
+                    {/* <option>Home Appliances</option> */}
                 </select>
                 <textarea placeholder="Your Message" rows="5" className="md:col-span-2 p-3 bg-brand-cream/60 border-transparent border-2 rounded-lg focus:ring-2 focus:ring-brand-gold focus:outline-none focus:border-brand-gold"></textarea>
                 <div className="md:col-span-2 text-center">

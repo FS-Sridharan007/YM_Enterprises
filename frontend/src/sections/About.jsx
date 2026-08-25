@@ -30,6 +30,39 @@ const About = () => {
             </p>
           </div>
         </motion.div>
+
+        {/* Additional Team Members */}
+        <div className="grid md:grid-cols-2 gap-8 mt-8">
+          {/* T Bhuvaneshwaran - Sales Director */}
+          <motion.div
+            className="bg-white rounded-lg shadow-xl p-8 md:p-10 text-center"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            <div className="w-20 h-20 rounded-full mx-auto mb-4 bg-brand-teal/10 flex items-center justify-center shadow-md">
+              <span className="text-3xl font-bold text-brand-teal font-serif">TB</span>
+            </div>
+            <h3 className="font-serif text-2xl font-bold text-brand-teal">T Bhuvaneshwaran</h3>
+            <p className="text-brand-gold font-semibold mt-1">Sales Director</p>
+          </motion.div>
+
+          {/* G Pushpaganesh - Technical Director */}
+          <motion.div
+            className="bg-white rounded-lg shadow-xl p-8 md:p-10 text-center"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="w-20 h-20 rounded-full mx-auto mb-4 bg-brand-teal/10 flex items-center justify-center shadow-md">
+              <span className="text-3xl font-bold text-brand-teal font-serif">GP</span>
+            </div>
+            <h3 className="font-serif text-2xl font-bold text-brand-teal">G Pushpaganesh</h3>
+            <p className="text-brand-gold font-semibold mt-1">Technical Director</p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -25,17 +25,17 @@ const serviceDetails = {
       "Ongoing Maintenance & Support"
     ]
   },
-  appliances: {
-    icon: <FiHome className="text-3xl" />,
-    title: "Premium & Smart Home Appliances",
-    description: "Elevate your home with a range of smart and durable home appliances.",
-    items: [
-      "Modern Kitchen Appliances",
-      "Integrated Smart Home Devices",
-      "Energy-Efficient Solutions",
-      "Expert Installation Services"
-    ]
-  }
+  // appliances: {
+  //   icon: <FiHome className="text-3xl" />,
+  //   title: "Premium & Smart Home Appliances",
+  //   description: "Elevate your home with a range of smart and durable home appliances.",
+  //   items: [
+  //     "Modern Kitchen Appliances",
+  //     "Integrated Smart Home Devices",
+  //     "Energy-Efficient Solutions",
+  //     "Expert Installation Services"
+  //   ]
+  // }
 };
 
 const DetailedService = () => {
@@ -62,7 +62,7 @@ const DetailedService = () => {
         <div className="flex justify-center space-x-4 mb-12">
           <TabButton id="lighting" label="Lighting" />
           <TabButton id="solar" label="Solar" />
-          <TabButton id="appliances" label="Appliances" />
+          {/* <TabButton id="appliances" label="Appliances" /> */}
         </div>
 
         <div className="bg-white p-12 rounded-lg shadow-xl max-w-4xl mx-auto transition-all duration-500">

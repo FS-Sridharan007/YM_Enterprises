@@ -47,27 +47,27 @@ export const servicesData = {
       link: "/contact"
     }
   },
-  appliances: {
-    key: "appliances",
-    title: "Home Appliances",
-    description: "Premium, smart, and durable appliances for modern households.",
-    details: "We offer high-quality, smart home appliances that combine modern design, efficiency, and durability for everyday convenience.",
-    features: [
-      "Smart kitchen appliances",
-      "Energy-efficient devices",
-      "Home automation compatibility",
-      "Reliable and durable products",
-      "Sleek modern designs"
-    ],
-    benefits: [
-      "Convenient daily usage",
-      "Cost-efficient energy consumption",
-      "Smart control and integration",
-      "High-quality, long-lasting products"
-    ],
-    cta: {
-      text: "Check Appliances",
-      link: "/contact"
-    }
-  }
+  // appliances: {
+  //   key: "appliances",
+  //   title: "Home Appliances",
+  //   description: "Premium, smart, and durable appliances for modern households.",
+  //   details: "We offer high-quality, smart home appliances that combine modern design, efficiency, and durability for everyday convenience.",
+  //   features: [
+  //     "Smart kitchen appliances",
+  //     "Energy-efficient devices",
+  //     "Home automation compatibility",
+  //     "Reliable and durable products",
+  //     "Sleek modern designs"
+  //   ],
+  //   benefits: [
+  //     "Convenient daily usage",
+  //     "Cost-efficient energy consumption",
+  //     "Smart control and integration",
+  //     "High-quality, long-lasting products"
+  //   ],
+  //   cta: {
+  //     text: "Check Appliances",
+  //     link: "/contact"
+  //   }
+  // }
 };

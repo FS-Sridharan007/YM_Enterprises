@@ -25,7 +25,7 @@ const Footer = () => {
             <ul className="space-y-2.5 text-sm">
               <li><a href="/#services" className="text-gray-300 hover:text-brand-gold transition-colors">Lighting Solutions</a></li>
               <li><a href="/#services" className="text-gray-300 hover:text-brand-gold transition-colors">Solar Energy</a></li>
-              <li><a href="/#services" className="text-gray-300 hover:text-brand-gold transition-colors">Home Appliances</a></li>
+              {/* <li><a href="/#services" className="text-gray-300 hover:text-brand-gold transition-colors">Home Appliances</a></li> */}
               <li><a href="/all-products" className="text-gray-300 hover:text-brand-gold transition-colors">All Products</a></li>
             </ul>
           </div>

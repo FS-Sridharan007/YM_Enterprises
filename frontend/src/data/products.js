@@ -475,30 +475,7 @@ export const productCategories = [
       },
     ],
   },
-  {
-    id: "home-living",
-    category: "Home & Living",
-    items: [
-      {
-        id: "home-appliances",
-        title: "Smart Home Appliances",
-        description:
-          "Elevate your home with our curated collection of smart appliances, designed to bring efficiency, comfort, and style to everyday living. Each product is chosen for its superior quality, durability, and advanced technology — making your home smarter, safer, and more convenient.",
-        // images: [
-        //   { src: DishWasher, name: "Dishwasher" },
-        //   { src: Coffee, name: "Coffee Maker" },
-        //   { src: Cleaner, name: "Vacuum Cleaner" },
-        //   { src: Cafe, name: "Café Brewer" },
-        //   { src: Fryer, name: "Air Fryer" },
-        //   { src: Iron, name: "Iron" },
-        //   { src: Kettle, name: "Electric Kettle" },
-        //   { src: Mixer, name: "Mixer Grinder" },
-        //   { src: TeaKettle, name: "Tea Kettle" },
-        //   { src: Toaster, name: "Toaster" },
-        // ],
-      },
-    ],
-  },
+  // {\n  //   id: \"home-living\",\n  //   category: \"Home & Living\",\n  //   items: [\n  //     {\n  //       id: \"home-appliances\",\n  //       title: \"Smart Home Appliances\",\n  //       description:\n  //         \"Elevate your home with our curated collection of smart appliances, designed to bring efficiency, comfort, and style to everyday living. Each product is chosen for its superior quality, durability, and advanced technology — making your home smarter, safer, and more convenient.\",\n  //       // images: [\n  //       //   { src: DishWasher, name: \"Dishwasher\" },\n  //       //   { src: Coffee, name: \"Coffee Maker\" },\n  //       //   { src: Cleaner, name: \"Vacuum Cleaner\" },\n  //       //   { src: Cafe, name: \"Café Brewer\" },\n  //       //   { src: Fryer, name: \"Air Fryer\" },\n  //       //   { src: Iron, name: \"Iron\" },\n  //       //   { src: Kettle, name: \"Electric Kettle\" },\n  //       //   { src: Mixer, name: \"Mixer Grinder\" },\n  //       //   { src: TeaKettle, name: \"Tea Kettle\" },\n  //       //   { src: Toaster, name: \"Toaster\" },\n  //       // ],\n  //     },\n  //   ],\n  // },
 ];
 
 
