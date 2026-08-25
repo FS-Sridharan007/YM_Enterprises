@@ -52,12 +52,12 @@ const allCategories = [
     id: "feston",
     title: "Feston",
     description:
-      "Smart string inverters from the Feston Enfield Series — compact, efficient, and built for seamless grid-tied solar conversion.",
+      "Smart On-Grid inverters from the Feston Enfield Series — compact, efficient, and built for seamless grid-tied solar conversion.",
     image: feston3Kw,
     href: "/feston-products",
     icon: HiOutlineSparkles,
     color: "from-violet-400 to-purple-500",
-    items: ["3KW String Inverter", "5KW String Inverter"],
+    items: ["3KW On-Grid inverter", "5KW On-Grid inverter"],
   },
   {
     id: "deye",

@@ -8,10 +8,10 @@ import EnquiryModal from "../components/common/EnquiryModal";
 
 /* ───── badge colour map ───── */
 const badgeColors = {
-  Popular:   "bg-blue-500",
+  Popular:      "bg-blue-500",
   "Best Value": "bg-emerald-500",
-  Limited:   "bg-amber-500",
-  Premium:   "bg-purple-500",
+  Limited:      "bg-amber-500",
+  Premium:      "bg-purple-500",
 };
 
 /* ───── stagger container ───── */
@@ -27,12 +27,21 @@ const cardVariants = {
 const CombosPage = () => {
   const [expandedId, setExpandedId] = useState(null);
   const [selectedCombo, setSelectedCombo] = useState(null);
+  const [activeImgIdx, setActiveImgIdx] = useState({});
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const toggle = (id) => setExpandedId(expandedId === id ? null : id);
+  const toggle = (id) => {
+    setExpandedId(expandedId === id ? null : id);
+    // reset image selection when collapsing
+    if (expandedId === id) {
+      setActiveImgIdx((prev) => ({ ...prev, [id]: 0 }));
+    }
+  };
+
+  const getActiveIdx = (id) => activeImgIdx[id] ?? 0;
 
   return (
     <section className="pt-32 pb-24 bg-gradient-to-b from-white via-gray-50 to-white scroll-mt-28 min-h-screen">
@@ -75,6 +84,7 @@ const CombosPage = () => {
         >
           {comboOffers.map((combo) => {
             const isExpanded = expandedId === combo.id;
+            const activeIdx = getActiveIdx(combo.id);
 
             return (
               <motion.div
@@ -92,21 +102,70 @@ const CombosPage = () => {
                 )}
 
                 <div>
-                  {/* ── Image Row ── */}
-                  <div className="flex items-center justify-center gap-4 p-6 bg-gray-50/60">
-                    {combo.images.map((img, i) => (
-                      <div
-                        key={i}
-                        className="w-32 h-32 bg-white rounded-xl border border-gray-100 flex items-center justify-center overflow-hidden shadow-sm group-hover:scale-[1.03] transition-transform duration-300"
+                  {/* ── COLLAPSED: Single hero OR side-by-side based on flag ── */}
+                  {!isExpanded && (
+                    <div className="flex items-center justify-center gap-4 p-6 bg-gray-50/60">
+                      {(combo.showAllOnCard ? combo.images : [combo.images[0]]).map((img, i) => (
+                        <div
+                          key={i}
+                          className="w-44 h-44 bg-white rounded-xl border border-gray-100 flex items-center justify-center overflow-hidden shadow-sm group-hover:scale-[1.03] transition-transform duration-300"
+                        >
+                          <img
+                            src={img.src}
+                            alt={img.name}
+                            className="w-full h-full object-contain p-2"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* ── EXPANDED: Full image gallery ── */}
+                  <AnimatePresence>
+                    {isExpanded && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
                       >
-                        <img
-                          src={img.src}
-                          alt={img.name}
-                          className="w-full h-full object-contain p-2"
-                        />
-                      </div>
-                    ))}
-                  </div>
+                        {/* Main large image */}
+                        <div className="flex items-center justify-center p-6 pb-3 bg-gray-50/60">
+                          <div className="w-64 h-64 bg-white rounded-xl border border-gray-100 flex items-center justify-center overflow-hidden shadow-sm">
+                            <img
+                              src={combo.images[activeIdx].src}
+                              alt={combo.images[activeIdx].name}
+                              className="w-full h-full object-contain p-3"
+                            />
+                          </div>
+                        </div>
+
+                        {/* Thumbnail strip */}
+                        <div className="flex items-center justify-center gap-2 px-6 pb-4 bg-gray-50/60 flex-wrap">
+                          {combo.images.map((img, i) => (
+                            <button
+                              key={i}
+                              onClick={() =>
+                                setActiveImgIdx((prev) => ({ ...prev, [combo.id]: i }))
+                              }
+                              className={`w-14 h-14 rounded-lg border-2 flex items-center justify-center overflow-hidden transition-all duration-200 ${
+                                activeIdx === i
+                                  ? "border-brand-teal shadow-md scale-105"
+                                  : "border-gray-200 hover:border-brand-gold"
+                              }`}
+                            >
+                              <img
+                                src={img.src}
+                                alt={img.name}
+                                className="w-full h-full object-contain p-1"
+                              />
+                            </button>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
 
                   {/* ── Details ── */}
                   <div className="p-6">
@@ -131,7 +190,7 @@ const CombosPage = () => {
                       ))}
                     </ul>
 
-                    {/* expandable description */}
+                    {/* expand/collapse toggle */}
                     <button
                       onClick={() => toggle(combo.id)}
                       className="flex items-center gap-1 text-brand-teal text-sm font-medium mt-3 hover:text-brand-gold transition-colors"
@@ -140,6 +199,7 @@ const CombosPage = () => {
                       {isExpanded ? <FiChevronUp size={14} /> : <FiChevronDown size={14} />}
                     </button>
 
+                    {/* expandable description */}
                     <AnimatePresence>
                       {isExpanded && (
                         <motion.p
@@ -147,7 +207,7 @@ const CombosPage = () => {
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.25 }}
-                          className="text-gray-500 text-sm overflow-hidden mt-2"
+                          className="text-gray-500 text-sm overflow-hidden mt-2 leading-relaxed"
                         >
                           {combo.description}
                         </motion.p>
