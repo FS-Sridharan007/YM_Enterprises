@@ -4,7 +4,7 @@ const helmet = require("helmet");
 const cors = require("cors");
 const rateLimit = require("express-rate-limit");
 const { body, validationResult } = require("express-validator");
-const { sendEnquiryEmail, sendContactEmail } = require("./mailer");
+const { sendEnquiryEmail, sendContactEmail, sendCustomerConfirmationEmail } = require("./mailer");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -73,9 +73,15 @@ app.post(
     const { name, phone, email, city, message, productName, productUrl } = req.body;
 
     try {
+      // 1. Send email to business owner
       await sendEnquiryEmail({ name, phone, email, city, message, productName, productUrl });
-
       console.log(`✅ Enquiry email sent for "${productName}" from ${name} (${phone})`);
+
+      // 2. Send confirmation to customer (if they provided an email)
+      if (email) {
+        await sendCustomerConfirmationEmail({ name, email, productName });
+        console.log(`✅ Confirmation email sent to customer: ${email}`);
+      }
 
       return res.status(200).json({
         success: true,
@@ -111,9 +117,13 @@ app.post(
     const { name, email, service, message } = req.body;
 
     try {
+      // 1. Send email to business owner
       await sendContactEmail({ name, email, service, message });
-
       console.log(`✅ Contact email sent from ${name} (${email})`);
+
+      // 2. Send confirmation to customer
+      await sendCustomerConfirmationEmail({ name, email, service });
+      console.log(`✅ Confirmation email sent to customer: ${email}`);
 
       return res.status(200).json({
         success: true,

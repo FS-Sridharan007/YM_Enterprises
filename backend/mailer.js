@@ -148,4 +148,50 @@ const sendContactEmail = async (data) => {
   return transporter.sendMail(mailOptions);
 };
 
-module.exports = { sendEnquiryEmail, sendContactEmail };
+/**
+ * Send an auto-reply confirmation email to the customer
+ * @param {Object} data - { name, email, productName, service }
+ */
+const sendCustomerConfirmationEmail = async (data) => {
+  const { name, email, productName, service } = data;
+
+  const subject = productName 
+    ? `Thank you for your enquiry — ${productName}` 
+    : `We have received your message!`;
+
+  const itemOfInterest = productName || service || "our services";
+
+  const mailOptions = {
+    from: `"Yazh Marutha Enterprises" <${process.env.ZOHO_USER}>`,
+    to: email,
+    subject: subject,
+    html: `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+        
+        <div style="background: #1a535c; padding: 30px; text-align: center;">
+          <h2 style="color: #ffffff; margin: 0; font-size: 24px;">Thank You, ${name}!</h2>
+          <p style="color: #c4a265; margin: 8px 0 0; font-size: 15px;">Your request has been successfully received.</p>
+        </div>
+
+        <div style="padding: 32px; color: #333333; line-height: 1.6;">
+          <p>Hi <strong>${name}</strong>,</p>
+          <p>Thank you for getting in touch with Yazh Marutha Enterprises.</p>
+          <p>We have successfully received your enquiry regarding <strong>${itemOfInterest}</strong>. Our expert team is currently reviewing your request and will get back to you shortly with the details you need.</p>
+          
+          <div style="background: #f9f9f9; padding: 16px; border-radius: 6px; margin: 24px 0; border-left: 4px solid #c4a265;">
+            <p style="margin: 0; font-size: 14px;"><strong>Note:</strong> This is an automated confirmation email. You don't need to reply to this message.</p>
+          </div>
+          
+          <p>If you need immediate assistance, please don't hesitate to call us directly.</p>
+          
+          <p style="margin-top: 32px; margin-bottom: 0;">Best Regards,</p>
+          <p style="margin-top: 4px; font-weight: bold; color: #1a535c;">Team Yazh Marutha Enterprises</p>
+        </div>
+      </div>
+    `,
+  };
+
+  return transporter.sendMail(mailOptions);
+};
+
+module.exports = { sendEnquiryEmail, sendContactEmail, sendCustomerConfirmationEmail };
