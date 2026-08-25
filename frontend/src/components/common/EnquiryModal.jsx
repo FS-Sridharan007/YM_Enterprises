@@ -13,6 +13,7 @@ const EnquiryModal = ({ isOpen, onClose, product }) => {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (product) {
@@ -33,14 +34,35 @@ const EnquiryModal = ({ isOpen, onClose, product }) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate submission delay
-    setTimeout(() => {
+    setError("");
+
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
+    try {
+      const response = await fetch(`${API_URL}/api/enquiry`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          productName: product?.title || product?.name || "Product Enquiry",
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSubmitted(true);
+      } else {
+        setError(result.message || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setError("Unable to connect. Please check your internet or contact us directly.");
+    } finally {
       setLoading(false);
-      setSubmitted(true);
-    }, 800);
+    }
   };
 
   const productImage = product.images?.[0]?.src || product.image;
@@ -224,6 +246,13 @@ const EnquiryModal = ({ isOpen, onClose, product }) => {
                     className="w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-teal focus:border-transparent text-sm leading-relaxed"
                   />
                 </div>
+
+                {/* Error Message */}
+                {error && (
+                  <div className="bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3 rounded-xl">
+                    ⚠️ {error}
+                  </div>
+                )}
 
                 {/* Submit CTA */}
                 <button
