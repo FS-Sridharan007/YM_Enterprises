@@ -1,9 +1,11 @@
 import React, { useState, useLayoutEffect, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { productCategories } from "../data/products";
-import { FiArrowLeft, FiX, FiCheck } from "react-icons/fi";
+import { FiArrowLeft, FiX, FiCheck, FiSend } from "react-icons/fi";
 import { AiFillStar } from "react-icons/ai";
 import { motion, AnimatePresence } from "framer-motion";
+import EnquiryModal from "../components/common/EnquiryModal";
 
 const ProductDetailPage = () => {
   const { categoryId, productId } = useParams();
@@ -12,6 +14,7 @@ const ProductDetailPage = () => {
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [activeImageSrc, setActiveImageSrc] = useState("");
+  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -187,12 +190,13 @@ const ProductDetailPage = () => {
                     Buy Now
                   </Link>
 
-                  <Link
-                    to="/#contact"
-                    className="bg-brand-gold text-brand-charcoal font-bold px-8 py-4 rounded-xl shadow-md hover:bg-yellow-400 transition text-center flex-1 min-w-[160px]"
+                  <button
+                    onClick={() => setIsEnquiryOpen(true)}
+                    className="bg-brand-gold text-brand-charcoal font-bold px-8 py-4 rounded-xl shadow-md hover:bg-yellow-400 transition flex items-center justify-center gap-2 text-center flex-1 min-w-[160px]"
                   >
-                    Enquiry Now
-                  </Link>
+                    <FiSend />
+                    <span>Enquiry Now</span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -235,6 +239,16 @@ const ProductDetailPage = () => {
                 </motion.div>
               ))}
             </div>
+
+            <div className="mt-12 text-center">
+              <button
+                onClick={() => setIsEnquiryOpen(true)}
+                className="bg-brand-gold text-brand-charcoal font-bold px-10 py-4 rounded-xl shadow-md hover:bg-yellow-400 transition inline-flex items-center gap-2"
+              >
+                <FiSend />
+                <span>Enquire About {product.title}</span>
+              </button>
+            </div>
           </div>
         )}
 
@@ -274,6 +288,13 @@ const ProductDetailPage = () => {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Global Quick Product Enquiry Modal */}
+        <EnquiryModal
+          isOpen={isEnquiryOpen}
+          onClose={() => setIsEnquiryOpen(false)}
+          product={product}
+        />
       </div>
     </motion.section>
   );

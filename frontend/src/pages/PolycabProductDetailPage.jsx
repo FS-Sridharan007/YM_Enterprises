@@ -1,8 +1,10 @@
 import React, { useState, useLayoutEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiArrowLeft, FiX, FiCheck } from "react-icons/fi";
+import { FiArrowLeft, FiX, FiCheck, FiSend } from "react-icons/fi";
 import { polycabCategories } from "../data/polycabProduct";
+import EnquiryModal from "../components/common/EnquiryModal";
 
 const PolycabProductDetailPage = () => {
   const { categoryId, productId } = useParams();
@@ -12,6 +14,7 @@ const PolycabProductDetailPage = () => {
   const product = category?.items.find((item) => item.id === productId);
 
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -33,7 +36,6 @@ const PolycabProductDetailPage = () => {
 
   const displayImage = product.images?.[0]?.src;
 
-  // Available models in Polycab range
   const models = [
     { id: "3kw", label: "3 KW", targetId: "polycab-3kw-solar-inverter" },
     { id: "5kw", label: "5 KW", targetId: "polycab-5kw-solar-inverter" },
@@ -144,14 +146,23 @@ const PolycabProductDetailPage = () => {
               </div>
             </div>
 
-            {/* Enquiry Now Button */}
-            <div className="mt-10">
-              <Link
-                to="/#contact"
-                className="inline-block bg-brand-gold text-brand-charcoal font-bold px-8 py-4 rounded-xl shadow-md hover:bg-yellow-400 transition"
+            {/* CTA BUTTONS */}
+            <div className="flex flex-wrap gap-4 mt-10">
+              <button
+                onClick={() => setIsEnquiryOpen(true)}
+                className="bg-brand-gold text-brand-charcoal font-bold px-8 py-4 rounded-xl shadow-md hover:bg-yellow-400 transition flex items-center justify-center gap-2 text-center flex-1 min-w-[160px]"
               >
-                Enquiry Now
-              </Link>
+                <FiSend />
+                <span>Enquiry Now</span>
+              </button>
+
+              <HashLink
+                smooth
+                to="/#contact"
+                className="bg-gray-100 text-gray-700 font-semibold px-6 py-4 rounded-xl hover:bg-gray-200 transition text-center flex-1 min-w-[160px] text-sm flex items-center justify-center"
+              >
+                Go to Contact Form
+              </HashLink>
             </div>
           </div>
         </div>
@@ -189,6 +200,13 @@ const PolycabProductDetailPage = () => {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Quick Product Enquiry Modal */}
+        <EnquiryModal
+          isOpen={isEnquiryOpen}
+          onClose={() => setIsEnquiryOpen(false)}
+          product={product}
+        />
       </div>
     </motion.section>
   );

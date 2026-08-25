@@ -1,5 +1,6 @@
 import React from 'react';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import { HashLink } from 'react-router-hash-link';
 import companyLogo from '../../assets/Logo2.png';
 
 const Footer = () => {
@@ -33,8 +34,8 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4 text-white">Company</h4>
             <ul className="space-y-2.5 text-sm">
-              <li><a href="/#about" className="text-gray-300 hover:text-brand-gold transition-colors">About Us</a></li>
-              <li><a href="/#contact" className="text-gray-300 hover:text-brand-gold transition-colors">Contact Us</a></li>
+              <li><HashLink smooth to="/#about" className="text-gray-300 hover:text-brand-gold transition-colors">About Us</HashLink></li>
+              <li><HashLink smooth to="/#contact" className="text-gray-300 hover:text-brand-gold transition-colors">Contact Us</HashLink></li>
               <li><a href="/gallery" className="text-gray-300 hover:text-brand-gold transition-colors">Gallery</a></li>
             </ul>
           </div>
