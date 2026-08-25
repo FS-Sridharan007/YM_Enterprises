@@ -1,6 +1,6 @@
-const { sendEnquiryEmail, sendCustomerConfirmationEmail } = require("./mailer");
+import { sendEnquiryEmail, sendCustomerConfirmationEmail } from "./mailer.js";
 
-exports.handler = async (event, context) => {
+export const handler = async (event, context) => {
   // CORS Preflight
   if (event.httpMethod === "OPTIONS") {
     return {

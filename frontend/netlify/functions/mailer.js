@@ -1,4 +1,4 @@
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
 // We only initialize the transporter when a function is called
 const getTransporter = () => {
@@ -13,7 +13,7 @@ const getTransporter = () => {
   });
 };
 
-const sendEnquiryEmail = async (data) => {
+export const sendEnquiryEmail = async (data) => {
   const { name, phone, email, city, message, productName, productUrl } = data;
   const transporter = getTransporter();
 
@@ -73,7 +73,7 @@ const sendEnquiryEmail = async (data) => {
   return transporter.sendMail(mailOptions);
 };
 
-const sendContactEmail = async (data) => {
+export const sendContactEmail = async (data) => {
   const { name, email, service, message } = data;
   const transporter = getTransporter();
 
@@ -115,7 +115,7 @@ const sendContactEmail = async (data) => {
   return transporter.sendMail(mailOptions);
 };
 
-const sendCustomerConfirmationEmail = async (data) => {
+export const sendCustomerConfirmationEmail = async (data) => {
   const { name, email, productName, service } = data;
   if (!email) return;
 
@@ -153,4 +153,3 @@ const sendCustomerConfirmationEmail = async (data) => {
   return transporter.sendMail(mailOptions);
 };
 
-module.exports = { sendEnquiryEmail, sendContactEmail, sendCustomerConfirmationEmail };
