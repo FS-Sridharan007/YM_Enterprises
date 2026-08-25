@@ -39,10 +39,10 @@ const EnquiryModal = ({ isOpen, onClose, product }) => {
     setLoading(true);
     setError("");
 
-    // Force using Netlify Functions by ignoring the old VITE_API_URL completely.
+    // Force using Netlify Background Functions for INSTANT form submission
     // Locally, you can set VITE_LOCAL_BACKEND_URL in .env.local if you want to use the local node server.
     const API_URL = import.meta.env.VITE_LOCAL_BACKEND_URL || "";
-    const endpoint = API_URL ? `${API_URL}/api/enquiry` : `/.netlify/functions/enquiry`;
+    const endpoint = API_URL ? `${API_URL}/api/enquiry` : `/.netlify/functions/enquiry-background`;
 
     try {
       const response = await fetch(endpoint, {
@@ -55,11 +55,11 @@ const EnquiryModal = ({ isOpen, onClose, product }) => {
         }),
       });
 
-      const result = await response.json();
-
-      if (response.ok && result.success) {
+      // Background functions return 202 Accepted with no JSON body
+      if (response.ok || response.status === 202) {
         setSubmitted(true);
       } else {
+        const result = await response.json().catch(() => ({}));
         setError(result.message || "Something went wrong. Please try again.");
       }
     } catch (err) {

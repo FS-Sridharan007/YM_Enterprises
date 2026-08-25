@@ -15,9 +15,9 @@ const Contact = () => {
     setLoading(true);
     setError("");
 
-    // Force using Netlify Functions by ignoring the old VITE_API_URL completely.
+    // Force using Netlify Background Functions for INSTANT form submission
     const API_URL = import.meta.env.VITE_LOCAL_BACKEND_URL || "";
-    const endpoint = API_URL ? `${API_URL}/api/contact` : `/.netlify/functions/contact`;
+    const endpoint = API_URL ? `${API_URL}/api/contact` : `/.netlify/functions/contact-background`;
 
     try {
       const response = await fetch(endpoint, {
@@ -26,11 +26,12 @@ const Contact = () => {
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
-
-      if (response.ok && result.success) {
+      // Background functions return 202 Accepted with no JSON body
+      if (response.ok || response.status === 202) {
         setSubmitted(true);
+        setFormData({ name: "", email: "", service: "", message: "" });
       } else {
+        const result = await response.json().catch(() => ({}));
         setError(result.message || "Something went wrong. Please try again.");
       }
     } catch (err) {
