@@ -39,10 +39,12 @@ const EnquiryModal = ({ isOpen, onClose, product }) => {
     setLoading(true);
     setError("");
 
-    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+    // Use Netlify Functions if available, otherwise local Dev server
+    const API_URL = import.meta.env.VITE_API_URL || "";
+    const endpoint = API_URL ? `${API_URL}/api/enquiry` : `/.netlify/functions/enquiry`;
 
     try {
-      const response = await fetch(`${API_URL}/api/enquiry`, {
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
