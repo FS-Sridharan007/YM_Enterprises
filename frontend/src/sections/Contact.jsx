@@ -15,8 +15,8 @@ const Contact = () => {
     setLoading(true);
     setError("");
 
-    // Use Netlify Functions if available, otherwise local Dev server
-    const API_URL = import.meta.env.VITE_API_URL || "";
+    // Force using Netlify Functions by ignoring the old VITE_API_URL completely.
+    const API_URL = import.meta.env.VITE_LOCAL_BACKEND_URL || "";
     const endpoint = API_URL ? `${API_URL}/api/contact` : `/.netlify/functions/contact`;
 
     try {

@@ -39,8 +39,9 @@ const EnquiryModal = ({ isOpen, onClose, product }) => {
     setLoading(true);
     setError("");
 
-    // Use Netlify Functions if available, otherwise local Dev server
-    const API_URL = import.meta.env.VITE_API_URL || "";
+    // Force using Netlify Functions by ignoring the old VITE_API_URL completely.
+    // Locally, you can set VITE_LOCAL_BACKEND_URL in .env.local if you want to use the local node server.
+    const API_URL = import.meta.env.VITE_LOCAL_BACKEND_URL || "";
     const endpoint = API_URL ? `${API_URL}/api/enquiry` : `/.netlify/functions/enquiry`;
 
     try {
