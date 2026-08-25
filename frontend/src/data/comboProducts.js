@@ -2,7 +2,7 @@
 // import Battery1 from "../assets/products/Combo/combo1.png"; // Microtek image — removed
 import Battery2 from "../assets/products/Combo/combo2.png";
 import exide1 from "../assets/products/Exide/Exide1.jpg";
-import exideinverter from "../assets/products/Combo/exideinverter.webp";
+import exideinverter from "../assets/products/Combo/Exideinverter.webp";
 import exide2 from "../assets/products/Exide/Exide2.jpg";
 import exide3 from "../assets/products/Exide/Exide3.jpg";
 import exide4 from "../assets/products/Exide/Exide4.jpg";
