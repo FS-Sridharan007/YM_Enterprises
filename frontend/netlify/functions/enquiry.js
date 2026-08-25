@@ -52,7 +52,7 @@ export const handler = async (event, context) => {
       headers: { "Access-Control-Allow-Origin": "*" },
       body: JSON.stringify({
         success: false,
-        message: "Failed to send enquiry. Please try again or contact us directly.",
+        message: "Server Error: " + error.message,
         error: error.message,
       }),
     };
