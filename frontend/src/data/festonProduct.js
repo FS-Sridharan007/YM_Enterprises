@@ -8,9 +8,9 @@ export const festonCategories = [
     items: [
       {
         id: "3KW-String-Inverter",
-        title: "3KW String Inverter",
+        title: "3KW Solar On-Grid Inverters - Single Phase",
         subtitle: "FE- 1.5 / 2.2 / 2.7 / 3 / 3.3 / 3.6 / 4 -1P-OG",
-        tagline: "Low Voltage | Single Phase",
+        // tagline: "Low Voltage | Single Phase",
         description:
           "Compact Power. Smart Efficiency. Perfect balance of performance and simplicity for home solar systems. The Feston 3KW Enfield Series offers highly-efficient, compact, and grid-compatible solar conversion with smart monitoring and robust protection. Ideal for homes and small businesses.",
         price: 19990,
@@ -43,9 +43,9 @@ export const festonCategories = [
       },
       {
         id: "5KW-String-Inverter",
-        title: "5KW String Inverter",
+        title: "5KW Solar On-Grid Inverters - THREE Phase",
         subtitle: "FE- 3.6 / 4 / 4.6 / 5 / 5.2 / 6 / 6.2 -1P-OG",
-        tagline: "Low Voltage | Single Phase",
+        // tagline: "Low Voltage | Single Phase",
         description:
           "Empower Your Home with Smart Solar. Seamless grid connection with intelligent energy management. The Feston 5KW Enfield Series delivers efficient solar energy conversion with grid support. With wide voltage flexibility, low start-up thresholds, and optional smart monitoring, it's ideal for homes and businesses aiming for reliable, grid-tied solar power.",
         price: 33590,
