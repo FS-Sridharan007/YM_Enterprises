@@ -14,6 +14,36 @@
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/Logo2.png" />
+
+  <!-- Developer Tools & Inspect Lock -->
+  <script>
+    // Disable Right Click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Disable Keyboard Shortcuts
+    document.onkeydown = function(e) {
+      // Disable F12
+      if(e.keyCode == 123) {
+        return false;
+      }
+      // Disable Ctrl+Shift+I (Windows) / Cmd+Option+I (Mac)
+      if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+        return false;
+      }
+      // Disable Ctrl+Shift+J (Windows) / Cmd+Option+J (Mac)
+      if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+        return false;
+      }
+      // Disable Ctrl+U (View Source) / Cmd+Option+U (Mac)
+      if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+        return false;
+      }
+      // Disable Ctrl+Shift+C (Inspect Element)
+      if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+        return false;
+      }
+    }
+  </script>
 </head>
 <body>
   <div id="root"></div>
