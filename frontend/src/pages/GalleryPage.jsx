@@ -137,7 +137,7 @@ const GalleryPage = () => {
             >
               <img
                 src={img.src}
-                alt={img.title}
+                // alt={img.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
@@ -147,9 +147,9 @@ const GalleryPage = () => {
                 <span className="text-xs uppercase tracking-wider font-semibold text-brand-gold">
                   {img.category}
                 </span>
-                <h3 className="font-serif text-base font-bold line-clamp-1 mt-0.5">
+                {/* <h3 className="font-serif text-base font-bold line-clamp-1 mt-0.5">
                   {img.title}
-                </h3>
+                </h3> */}
                 <div className="mt-3 flex items-center gap-1.5 text-xs font-medium bg-white/20 backdrop-blur-md w-fit px-3 py-1 rounded-full">
                   <FiMaximize2 size={12} /> Click to Expand
                 </div>
@@ -219,9 +219,9 @@ const GalleryPage = () => {
 
                 {/* Caption Bar */}
                 <div className="mt-4 text-center text-white">
-                  <h3 className="font-serif text-lg font-bold">
+                  {/* <h3 className="font-serif text-lg font-bold">
                     {galleryImages[selectedIndex].title}
-                  </h3>
+                  </h3> */}
                   <p className="text-xs text-gray-300 mt-1">
                     Image {selectedIndex + 1} of {galleryImages.length}
                   </p>
